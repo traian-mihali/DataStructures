@@ -1,4 +1,5 @@
-﻿using DataStructures.LinearStructures;
+﻿using DataStructures.Helpers;
+using DataStructures.LinearStructures;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,25 @@ namespace DataStructures
         static void Main(string[] args)
         {
             //TestArray();
-            TestLinkedList();
+            //TestLinkedList();
+
+            //Console.WriteLine(StringHelper.Reversed("abcd"));
+            //Console.WriteLine(Reversed(null));
+
+            Console.WriteLine(StringHelper.IsBalanced("(abc)"));
+            Console.WriteLine(StringHelper.IsBalanced("[abc]"));
+            Console.WriteLine(StringHelper.IsBalanced("{abc}"));
+            Console.WriteLine(StringHelper.IsBalanced("<abc>"));
+
+            Console.WriteLine(StringHelper.IsBalanced("((abc)"));
+            Console.WriteLine(StringHelper.IsBalanced("abc)"));
+            Console.WriteLine(StringHelper.IsBalanced(")abc("));
+            Console.WriteLine(StringHelper.IsBalanced("[abc}"));
+            Console.WriteLine(StringHelper.IsBalanced("<abc}"));
+
+
+
+
 
             Console.ReadLine();
         }

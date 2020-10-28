@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="LinearStructures\Array.cs" />
     <Compile Include="LinearStructures\LinkedList.cs" />
     <Compile Include="Program.cs" />
