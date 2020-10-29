@@ -15,24 +15,24 @@ namespace DataStructures
         {
             //TestArray();
             //TestLinkedList();
+            //TestStringHelper();
 
-            //Console.WriteLine(StringHelper.Reversed("abcd"));
-            //Console.WriteLine(Reversed(null));
+            var stack = new LinearStructures.Stack(3);
 
-            Console.WriteLine(StringHelper.IsBalanced("(abc)"));
-            Console.WriteLine(StringHelper.IsBalanced("[abc]"));
-            Console.WriteLine(StringHelper.IsBalanced("{abc}"));
-            Console.WriteLine(StringHelper.IsBalanced("<abc>"));
+            Console.WriteLine("stack.IsEmpty() " + stack.IsEmpty());
+            //Console.WriteLine("stack.Pop() " + stack.Pop());
 
-            Console.WriteLine(StringHelper.IsBalanced("((abc)"));
-            Console.WriteLine(StringHelper.IsBalanced("abc)"));
-            Console.WriteLine(StringHelper.IsBalanced(")abc("));
-            Console.WriteLine(StringHelper.IsBalanced("[abc}"));
-            Console.WriteLine(StringHelper.IsBalanced("<abc}"));
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            //stack.Push(4);
 
-
-
-
+            Console.WriteLine("stack.Pop() " + stack.Pop());
+            Console.WriteLine("stack.Peek() " + stack.Peek());
+            Console.WriteLine("stack.Pop() " + stack.Pop());
+            Console.WriteLine("stack.Peek() " + stack.Peek());
+            Console.WriteLine("stack.Pop() " + stack.Pop());
+            //Console.WriteLine("stack.Peek() " + stack.Peek());
 
             Console.ReadLine();
         }
@@ -139,6 +139,23 @@ namespace DataStructures
 
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("LINKEDLIST TO ARRAY: " + String.Join(", ", list.ToArray()));
+        }
+
+        static void TestStringHelper()
+        {
+            //Console.WriteLine(StringHelper.Reversed("abcd"));
+            //Console.WriteLine(Reversed(null));
+
+            Console.WriteLine(StringHelper.IsBalanced("(abc)"));
+            Console.WriteLine(StringHelper.IsBalanced("[abc]"));
+            Console.WriteLine(StringHelper.IsBalanced("{abc}"));
+            Console.WriteLine(StringHelper.IsBalanced("<abc>"));
+
+            Console.WriteLine(StringHelper.IsBalanced("((abc)"));
+            Console.WriteLine(StringHelper.IsBalanced("abc)"));
+            Console.WriteLine(StringHelper.IsBalanced(")abc("));
+            Console.WriteLine(StringHelper.IsBalanced("[abc}"));
+            Console.WriteLine(StringHelper.IsBalanced("<abc}"));
         }
     }
 }
