@@ -1,4 +1,5 @@
-﻿using DataStructures.Helpers;
+﻿using DataStructures.Exercises;
+using DataStructures.Helpers;
 using DataStructures.LinearStructures;
 using System;
 using System.Collections;
@@ -16,23 +17,9 @@ namespace DataStructures
             //TestArray();
             //TestLinkedList();
             //TestStringHelper();
-
-            var stack = new LinearStructures.Stack(3);
-
-            Console.WriteLine("stack.IsEmpty() " + stack.IsEmpty());
-            //Console.WriteLine("stack.Pop() " + stack.Pop());
-
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-            //stack.Push(4);
-
-            Console.WriteLine("stack.Pop() " + stack.Pop());
-            Console.WriteLine("stack.Peek() " + stack.Peek());
-            Console.WriteLine("stack.Pop() " + stack.Pop());
-            Console.WriteLine("stack.Peek() " + stack.Peek());
-            Console.WriteLine("stack.Pop() " + stack.Pop());
-            //Console.WriteLine("stack.Peek() " + stack.Peek());
+            //TestStack();
+            //TestMinStack();
+            //TestTwoStacks();
 
             Console.ReadLine();
         }
@@ -156,6 +143,68 @@ namespace DataStructures
             Console.WriteLine(StringHelper.IsBalanced(")abc("));
             Console.WriteLine(StringHelper.IsBalanced("[abc}"));
             Console.WriteLine(StringHelper.IsBalanced("<abc}"));
+        }
+
+        static void TestStack()
+        {
+            var stack = new LinearStructures.Stack(3);
+
+            Console.WriteLine("stack.IsEmpty() " + stack.IsEmpty());
+            //Console.WriteLine("stack.Pop() " + stack.Pop());
+
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            //stack.Push(4);
+
+            Console.WriteLine("stack.Pop() " + stack.Pop());
+            Console.WriteLine("stack.Peek() " + stack.Peek());
+            Console.WriteLine("stack.Pop() " + stack.Pop());
+            Console.WriteLine("stack.Peek() " + stack.Peek());
+            Console.WriteLine("stack.Pop() " + stack.Pop());
+            //Console.WriteLine("stack.Peek() " + stack.Peek());
+        }
+
+        static void TestMinStack()
+        {
+            var minStack = new MinStack(5);
+
+            //minStack.Pop();
+
+            minStack.Push(5);
+            minStack.Push(2);
+            minStack.Push(4);
+            minStack.Push(3);
+            minStack.Push(1);
+
+            Console.WriteLine(minStack.Min());
+            minStack.Pop();
+            Console.WriteLine(minStack.Min());
+
+        }
+
+        static void TestTwoStacks()
+        {
+            var twoStacks = new TwoStacks(5);
+
+            twoStacks.Push1(1); 
+            twoStacks.Push1(2);
+            twoStacks.Push2(3);
+            twoStacks.Push2(4);
+            twoStacks.Push2(5);
+
+            Console.WriteLine(twoStacks.Pop1());
+            Console.WriteLine(twoStacks.Pop1());
+            //Console.WriteLine(twoStacks.Pop1());
+
+            Console.WriteLine(twoStacks.Pop2());
+            Console.WriteLine(twoStacks.Pop2());
+            Console.WriteLine(twoStacks.Pop2());
+            //Console.WriteLine(twoStacks.Pop2());
+
+            twoStacks.Push1(10);
+            twoStacks.Push2(20);
+
         }
     }
 }

@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exercises\MinStack.cs" />
+    <Compile Include="Exercises\TwoStacks.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="LinearStructures\Array.cs" />
     <Compile Include="LinearStructures\LinkedList.cs" />
