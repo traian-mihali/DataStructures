@@ -14,7 +14,7 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            TestReverseUpToKthMethod();
+            TestLinkedListQueue();
 
             Console.ReadLine();
         }
@@ -290,6 +290,22 @@ namespace DataStructures
 
             foreach (var item in queue)
                 Console.Write(item + ", ");
+        }
+
+        static void TestLinkedListQueue()
+        {
+            LinkedListQueue queue = new LinkedListQueue();
+
+            queue.Enqueue(10);
+            queue.Enqueue(20);
+            queue.Enqueue(30);
+
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
+
+            //Console.WriteLine(queue.Dequeue());
+            //Console.WriteLine(queue.Peek());
         }
 
     }
