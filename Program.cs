@@ -14,18 +14,7 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            //TestArray();
-            //TestLinkedList();
-            //TestStringHelper();
-
-            //TestStack();
-            //TestMinStack();
-            //TestTwoStacks();
-
-            //TestReverseQueueMethod();
-            //TestArrayQueue();
-            //TestQueueWithTwoStacks();
-            //TestPriorityQueue();
+            TestReverseUpToKthMethod();
 
             Console.ReadLine();
         }
@@ -285,6 +274,22 @@ namespace DataStructures
             queue.Add(2);
 
             Console.WriteLine(queue);
+        }
+
+        static void TestReverseUpToKthMethod()
+        {
+            Queue<int> queue = new Queue<int>();
+
+            queue.Enqueue(10);
+            queue.Enqueue(20);
+            queue.Enqueue(30);
+            queue.Enqueue(40);
+            queue.Enqueue(50);
+
+            QueueReverser.ReverseUpToKth(queue, 3);
+
+            foreach (var item in queue)
+                Console.Write(item + ", ");
         }
 
     }
