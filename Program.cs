@@ -246,7 +246,7 @@ namespace DataStructures
             queue.Enqueue(3);
 
 
-            var reversed = HelperMethods.ReverseQueue(queue);
+            var reversed = QueueReverser.Reverse(queue);
 
             Console.WriteLine(reversed);
         }

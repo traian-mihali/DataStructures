@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructures.Helpers
+namespace DataStructures.Exercises
 {
-    public class HelperMethods
+    public class QueueReverser
     {
-        public static Queue<int> ReverseQueue(Queue<int> queue)
+        public static Queue<int> Reverse(Queue<int> queue)
         {
             Stack<int> stack = new Stack<int>();
 
