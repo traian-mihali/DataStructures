@@ -43,6 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exercises\MinStack.cs" />
+    <Compile Include="Exercises\QueueWithTwoStacks.cs" />
+    <Compile Include="Helpers\HelperMethods.cs" />
+    <Compile Include="LinearStructures\ArrayQueue.cs" />
+    <Compile Include="LinearStructures\PriorityQueue.cs" />
     <Compile Include="Exercises\TwoStacks.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="LinearStructures\Array.cs" />

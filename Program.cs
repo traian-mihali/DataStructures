@@ -17,9 +17,15 @@ namespace DataStructures
             //TestArray();
             //TestLinkedList();
             //TestStringHelper();
+
             //TestStack();
             //TestMinStack();
             //TestTwoStacks();
+
+            //TestReverseQueueMethod();
+            //TestArrayQueue();
+            //TestQueueWithTwoStacks();
+            //TestPriorityQueue();
 
             Console.ReadLine();
         }
@@ -206,5 +212,80 @@ namespace DataStructures
             twoStacks.Push2(20);
 
         }
+
+        static void TestArrayQueue()
+        {
+            ArrayQueue queue = new ArrayQueue(5);
+
+            queue.Enqueue(10);
+            queue.Enqueue(20);
+            queue.Enqueue(30);
+
+            //Console.WriteLine(queue.Dequeue());
+
+            queue.Dequeue();
+            queue.Dequeue();
+
+            queue.Enqueue(40);
+            queue.Enqueue(50);
+            queue.Enqueue(60);
+            queue.Enqueue(70);
+
+            queue.Dequeue();
+            queue.Enqueue(80);
+
+
+            Console.WriteLine(queue);
+        }
+
+        static void TestReverseQueueMethod()
+        {
+            Queue<int> queue = new Queue<int>();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+
+
+            var reversed = HelperMethods.ReverseQueue(queue);
+
+            Console.WriteLine(reversed);
+        }
+
+        static void TestQueueWithTwoStacks()
+        {
+            QueueWithTwoStacks queue = new QueueWithTwoStacks(3);
+            queue.Enqueue(10);
+            queue.Enqueue(20);
+            queue.Enqueue(30);
+            //queue.Enqueue(40);
+
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine(queue.Dequeue());
+            //queue.Dequeue();
+        }
+
+        static void TestPriorityQueue()
+        {
+            PriorityQueue queue = new PriorityQueue();
+
+            queue.Add(5);
+            queue.Add(3);
+            queue.Add(6);
+            queue.Add(1);
+            queue.Add(4);
+
+            queue.Remove();
+            queue.Remove();
+            //queue.Remove();
+            //queue.Remove();
+            //queue.Remove();
+
+            //Console.WriteLine(queue.Remove());
+            queue.Add(2);
+
+            Console.WriteLine(queue);
+        }
+
     }
 }
