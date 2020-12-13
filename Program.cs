@@ -12,9 +12,11 @@ namespace DataStructures
 {
     class Program
     {
+        public static string sample = "The quick brown fox jumps over the lazy dog.";
+
         static void Main(string[] args)
         {
-            TestFirstNonRepeatingCharacterMethod();
+            TestFirstRepeatingCharacterMethod();
 
             Console.ReadLine();
         }
@@ -327,9 +329,12 @@ namespace DataStructures
 
         static void TestFirstNonRepeatingCharacterMethod()
         {
-            var text = "The quick brown fox jumps over the lazy dog.";
+            Console.WriteLine(StringHelper.FirstNonRepeatingChar(sample));
+        }
 
-            Console.WriteLine(StringHelper.FirstNonRepeatingChar(text));
+        static void TestFirstRepeatingCharacterMethod()
+        {
+            Console.WriteLine(StringHelper.FirstRepeatingChar(sample));
         }
 
     }
