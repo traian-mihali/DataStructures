@@ -14,7 +14,7 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            TestStackWithTwoQueues();
+            TestFirstNonRepeatingCharacterMethod();
 
             Console.ReadLine();
         }
@@ -323,6 +323,13 @@ namespace DataStructures
             //Console.WriteLine(stack.Pop());
 
             //Console.WriteLine(stack.Peek());
+        }
+
+        static void TestFirstNonRepeatingCharacterMethod()
+        {
+            var text = "The quick brown fox jumps over the lazy dog.";
+
+            Console.WriteLine(StringHelper.FirstNonRepeatingChar(text));
         }
 
     }

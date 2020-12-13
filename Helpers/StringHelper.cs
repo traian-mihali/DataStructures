@@ -13,6 +13,26 @@ namespace DataStructures.Helpers
         private static readonly IList<char> rightBrackets = new List<char> { ')', ']', '}', '>' };
 
 
+        public static char FirstNonRepeatingChar(string text)
+        {
+            Dictionary<char, int> characters = new Dictionary<char, int>();
+            string source = text.ToLower();
+
+            foreach (char c in source)
+            {
+                int count = characters.ContainsKey(c) ? characters[c] : 0;
+                characters[c] = count + 1;
+            }
+
+            foreach (char c in source)
+            {
+                if (characters[c] == 1)
+                    return c;
+            }
+
+            return Char.MinValue;
+        }
+
         public static string Reversed(string str)
         {
             if (str == null)
