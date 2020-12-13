@@ -14,7 +14,7 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            TestLinkedListQueue();
+            TestStackWithTwoQueues();
 
             Console.ReadLine();
         }
@@ -306,6 +306,23 @@ namespace DataStructures
 
             //Console.WriteLine(queue.Dequeue());
             //Console.WriteLine(queue.Peek());
+        }
+
+        static void TestStackWithTwoQueues()
+        {
+            StackWithTwoQueues stack = new StackWithTwoQueues();
+
+            stack.Push(10);
+            stack.Push(20);
+            stack.Push(30);
+
+
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            //Console.WriteLine(stack.Pop());
+
+            //Console.WriteLine(stack.Peek());
         }
 
     }
