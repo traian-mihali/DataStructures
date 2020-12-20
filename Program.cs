@@ -16,7 +16,7 @@ namespace DataStructures
 
         static void Main(string[] args)
         {
-            TestFirstRepeatingCharacterMethod();
+            TestHashTable();
 
             Console.ReadLine();
         }
@@ -335,6 +335,21 @@ namespace DataStructures
         static void TestFirstRepeatingCharacterMethod()
         {
             Console.WriteLine(StringHelper.FirstRepeatingChar(sample));
+        }
+
+        static void TestHashTable()
+        {
+            HashTable table = new HashTable(5);
+
+            table.Put(6, "A");
+            table.Put(8, "B");
+            table.Put(11, "C");
+            table.Put(6, "A+");
+
+            table.Remove(6);
+            //table.Remove(10);
+            Console.WriteLine(table.Get(6));
+            //Console.WriteLine(table.Get(7));
         }
 
     }
