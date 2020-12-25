@@ -16,7 +16,7 @@ namespace DataStructures
 
         static void Main(string[] args)
         {
-            TestTwoSum();
+            TestHashTable1();
 
             Console.ReadLine();
         }
@@ -375,6 +375,27 @@ namespace DataStructures
 
             foreach (var index in result)
                 Console.Write(index + " ");
+        }
+
+        static void TestHashTable1()
+        {
+            var table = new HashTable1(5);
+
+            table.Put(6, "A");
+            table.Put(8, "B");
+            table.Put(11, "C");
+            table.Put(6, "A+");
+            table.Put(12, "D");
+            table.Put(14, "E");
+
+            //table.Put(14, "E+");
+            //table.Put(1, "F");
+
+
+            table.Remove(16);
+            table.Remove(10);
+            Console.WriteLine(table.Get(7));
+            Console.WriteLine(table.Get(8));
         }
 
     }

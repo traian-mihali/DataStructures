@@ -50,6 +50,7 @@
     <Compile Include="Exercises\StackWithTwoQueues.cs" />
     <Compile Include="LinearStructures\ArrayQueue.cs" />
     <Compile Include="LinearStructures\HashTable.cs" />
+    <Compile Include="LinearStructures\HashTable1.cs" />
     <Compile Include="LinearStructures\PriorityQueue.cs" />
     <Compile Include="Exercises\TwoStacks.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
