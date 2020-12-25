@@ -16,7 +16,7 @@ namespace DataStructures
 
         static void Main(string[] args)
         {
-            TestHashTable();
+            TestTwoSum();
 
             Console.ReadLine();
         }
@@ -350,6 +350,31 @@ namespace DataStructures
             //table.Remove(10);
             Console.WriteLine(table.Get(6));
             //Console.WriteLine(table.Get(7));
+        }
+
+        static void TestMostFrequent()
+        {
+            var numbers = new int[] { 1, 2, 2, 3, 3, 3, 4 };
+
+            Console.WriteLine(HashTableExercises.MostFrequent(numbers));
+        }
+
+        static void TestCountPairsWithDiff()
+        {
+            var numbers = new int[] { 1, 7, 5, 9, 2, 12, 3 };
+
+            Console.WriteLine(HashTableExercises.CountPairsWithDiff(numbers, 2));
+        }
+
+
+        static void TestTwoSum()
+        {
+            var numbers = new int[] { 2, 7, 11, 15 };
+
+            var result = HashTableExercises.TwoSum(numbers, 9);
+
+            foreach (var index in result)
+                Console.Write(index + " ");
         }
 
     }

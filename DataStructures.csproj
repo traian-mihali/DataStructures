@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exercises\HashTableExercises.cs" />
     <Compile Include="Exercises\LinkedListQueue.cs" />
     <Compile Include="Exercises\MinStack.cs" />
     <Compile Include="Exercises\QueueReverser.cs" />
