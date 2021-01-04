@@ -1,6 +1,7 @@
 ﻿using DataStructures.Exercises;
 using DataStructures.Helpers;
 using DataStructures.LinearStructures;
+using DataStructures.NonLinearStructures;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace DataStructures
 
         static void Main(string[] args)
         {
-            TestHashTable1();
+            TestBinaryTree();
 
             Console.ReadLine();
         }
@@ -396,6 +397,22 @@ namespace DataStructures
             table.Remove(10);
             Console.WriteLine(table.Get(7));
             Console.WriteLine(table.Get(8));
+        }
+
+        static void TestBinaryTree()
+        {
+            var tree = new BinaryTree();
+
+            tree.Insert(7);
+            tree.Insert(4);
+            tree.Insert(9);
+            tree.Insert(1);
+            tree.Insert(6);
+            tree.Insert(8);
+            tree.Insert(10);
+
+            Console.WriteLine(tree.Find(6));
+            Console.WriteLine(tree.Find(3));
         }
 
     }

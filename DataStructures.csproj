@@ -57,6 +57,7 @@
     <Compile Include="LinearStructures\Array.cs" />
     <Compile Include="LinearStructures\LinkedList.cs" />
     <Compile Include="LinearStructures\Stack.cs" />
+    <Compile Include="NonLinearStructures\BinaryTree.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
