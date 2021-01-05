@@ -108,6 +108,22 @@ namespace DataStructures.NonLinearStructures
             Console.WriteLine(root.Value);
         }
 
+        public int Height()
+        {
+            return Height(_root);
+        }
+
+        private int Height(Node root)
+        {
+            if (root == null)
+                return -1;
+
+            if (root.LeftChild == null && root.RightChild == null)
+                return 0;
+
+            return 1 + Math.Max(Height(root.LeftChild), Height(root.RightChild));
+        }
+
         private class Node
         {
             public int Value { get; set; }

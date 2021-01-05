@@ -411,12 +411,14 @@ namespace DataStructures
             tree.Insert(8);
             tree.Insert(10);
 
-            Console.WriteLine(tree.Find(6));
-            Console.WriteLine(tree.Find(3));
+            //Console.WriteLine(tree.Find(6));
+            //Console.WriteLine(tree.Find(3));
 
             //tree.TraversePreOrder();
             //tree.TraverseInOrder();
-            tree.TraversePostOrder();
+            //tree.TraversePostOrder();
+
+            Console.WriteLine("Tree Height: {0}", tree.Height());
 
         }
 
