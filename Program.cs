@@ -413,6 +413,11 @@ namespace DataStructures
 
             Console.WriteLine(tree.Find(6));
             Console.WriteLine(tree.Find(3));
+
+            //tree.TraversePreOrder();
+            //tree.TraverseInOrder();
+            tree.TraversePostOrder();
+
         }
 
     }
