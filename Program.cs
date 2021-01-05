@@ -419,6 +419,10 @@ namespace DataStructures
             //tree.TraversePostOrder();
 
             Console.WriteLine("Tree Height: {0}", tree.Height());
+            Console.WriteLine("Tree Min Value: {0}", tree.Min());
+
+            Console.WriteLine("Binary Search Tree Min Value: {0}", tree.MinFromBinarySearchTree());
+            Console.WriteLine("Binary Search Tree Max Value: {0}", tree.MaxFromBinarySearchTree());
 
         }
 

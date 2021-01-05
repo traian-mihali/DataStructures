@@ -118,10 +118,65 @@ namespace DataStructures.NonLinearStructures
             if (root == null)
                 return -1;
 
-            if (root.LeftChild == null && root.RightChild == null)
+            if (IsLeaf(root))
                 return 0;
 
             return 1 + Math.Max(Height(root.LeftChild), Height(root.RightChild));
+        }
+
+        public int Min()
+        {
+            return Min(_root);
+        }
+
+        private int Min(Node root)
+        {
+            if (IsLeaf(root))
+                return root.Value;
+
+            var left = Min(root.LeftChild);
+            var right = Min(root.RightChild);
+
+            return Math.Min(Math.Min(left, right), root.Value);
+        }
+
+        public int MinFromBinarySearchTree()
+        {
+            return MinFromBinarySearchTree(_root);
+        }
+
+        private int MinFromBinarySearchTree(Node root)
+        {
+            if (root == null)
+                throw new InvalidOperationException();
+
+            var current = root;
+            while (current.LeftChild != null)
+                current = current.LeftChild;
+
+            return current.Value;
+        }
+
+        public int MaxFromBinarySearchTree()
+        {
+            return MaxFromBinarySearchTree(_root);
+        }
+
+        private int MaxFromBinarySearchTree(Node root)
+        {
+            if (root == null)
+                throw new InvalidOperationException();
+
+            var current = root;
+            while (current.RightChild != null)
+                current = current.RightChild;
+
+            return current.Value;
+        }
+
+        private bool IsLeaf(Node root)
+        {
+            return root.LeftChild == null && root.RightChild == null;
         }
 
         private class Node
