@@ -174,6 +174,25 @@ namespace DataStructures.NonLinearStructures
             return current.Value;
         }
 
+        public bool Equals(BinaryTree other)
+        {
+            if (other == null)
+                return false;
+
+            return Equals(_root, other._root);
+        }
+
+        private bool Equals(Node first, Node second)
+        {
+            if (first == null && second == null)
+                return true;
+
+            if (first != null && second != null)
+                return first.Value == second.Value && Equals(first.LeftChild, second.LeftChild) && Equals(first.RightChild, second.RightChild);
+
+            return false;
+        }
+
         private bool IsLeaf(Node root)
         {
             return root.LeftChild == null && root.RightChild == null;

@@ -411,6 +411,16 @@ namespace DataStructures
             tree.Insert(8);
             tree.Insert(10);
 
+            var tree2 = new BinaryTree();
+
+            tree2.Insert(7);
+            tree2.Insert(4);
+            tree2.Insert(9);
+            tree2.Insert(1);
+            tree2.Insert(6);
+            tree2.Insert(8);
+            tree2.Insert(10);
+
             //Console.WriteLine(tree.Find(6));
             //Console.WriteLine(tree.Find(3));
 
@@ -423,6 +433,8 @@ namespace DataStructures
 
             Console.WriteLine("Binary Search Tree Min Value: {0}", tree.MinFromBinarySearchTree());
             Console.WriteLine("Binary Search Tree Max Value: {0}", tree.MaxFromBinarySearchTree());
+
+            Console.WriteLine("Are Equals: {0}", tree.Equals(tree2));
 
         }
 
