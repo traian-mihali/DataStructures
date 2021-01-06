@@ -193,6 +193,29 @@ namespace DataStructures.NonLinearStructures
             return false;
         }
 
+        public bool IsBinarySearchTree()
+        {
+            return IsBinarySearchTree(_root, int.MinValue, int.MaxValue);
+        }
+
+        private bool IsBinarySearchTree(Node root, int min, int max)
+        {
+            if (root == null)
+                return true;
+
+            if (root.Value < min || root.Value > max)
+                return false;
+
+            return IsBinarySearchTree(root.LeftChild, min, root.Value - 1) && IsBinarySearchTree(root.RightChild, root.Value + 1, max);
+        }
+
+        public void SwapRoot()
+        {
+            var left = _root.LeftChild;
+            _root.LeftChild = _root.RightChild;
+            _root.RightChild = left;
+        }
+
         private bool IsLeaf(Node root)
         {
             return root.LeftChild == null && root.RightChild == null;

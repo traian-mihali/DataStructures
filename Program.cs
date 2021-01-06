@@ -436,6 +436,9 @@ namespace DataStructures
 
             Console.WriteLine("Are Equals: {0}", tree.Equals(tree2));
 
+            //tree.SwapRoot();
+            Console.WriteLine("Is Binary Search Tree: {0}", tree.IsBinarySearchTree());
+
         }
 
     }
