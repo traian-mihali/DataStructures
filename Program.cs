@@ -439,6 +439,9 @@ namespace DataStructures
             //tree.SwapRoot();
             Console.WriteLine("Is Binary Search Tree: {0}", tree.IsBinarySearchTree());
 
+            var nodes = tree.GetNodesAtDistance(2);
+            foreach (var node in nodes)
+                Console.WriteLine(node);
         }
 
     }

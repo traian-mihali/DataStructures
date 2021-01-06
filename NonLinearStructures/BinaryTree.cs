@@ -216,6 +216,30 @@ namespace DataStructures.NonLinearStructures
             _root.RightChild = left;
         }
 
+        public IEnumerable<int> GetNodesAtDistance(int distance)
+        {
+            IList<int> nodes = new List<int>();
+
+            GetNodesAtDistance(_root, distance, nodes);
+
+            return nodes;
+        }
+
+        private void GetNodesAtDistance(Node root, int distance, IList<int> nodes)
+        {
+            if (root == null)
+                return;
+
+            if (distance == 0)
+            {
+                nodes.Add(root.Value);
+                return;
+            }
+
+            GetNodesAtDistance(root.LeftChild, distance - 1, nodes);
+            GetNodesAtDistance(root.RightChild, distance - 1, nodes);
+        }
+
         private bool IsLeaf(Node root)
         {
             return root.LeftChild == null && root.RightChild == null;
