@@ -63,6 +63,37 @@ namespace DataStructures.NonLinearStructures
             return false;
         }
 
+        public void TraverseLevelOrder()
+        {
+            for (var i = 0; i <= Height(); i++)
+                foreach (var value in GetNodesAtDistance(i))
+                    Console.WriteLine(value);
+        }
+
+        public void TraverseBreadthFirst()
+        {
+            TraverseBreadthFirst(_root);
+        }
+
+        private void TraverseBreadthFirst(Node root)
+        {
+            var nodes = new Queue<Node>();
+            nodes.Enqueue(root);
+
+            while (nodes.Count > 0)
+            {
+                var current = nodes.Dequeue();
+
+                if (current.LeftChild != null)
+                    nodes.Enqueue(current.LeftChild);
+
+                if (current.RightChild != null)
+                    nodes.Enqueue(current.RightChild);
+
+                Console.WriteLine(current.Value);
+            }
+        }
+
         public void TraversePreOrder()
         {
             TraversePreOrder(_root);
