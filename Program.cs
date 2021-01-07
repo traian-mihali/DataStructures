@@ -445,6 +445,35 @@ namespace DataStructures
 
             tree.TraverseBreadthFirst();
             tree.TraverseLevelOrder();
+
+            Console.WriteLine("Size: {0}", tree.Size());
+
+            Console.WriteLine("Leaves: {0}", tree.CountLeaves());
+
+            Console.WriteLine("Max: {0}", tree.Max());
+
+            Console.WriteLine("Contains 6: {0}", tree.Contains(6));
+            Console.WriteLine("Contains 11: {0}", tree.Contains(11));
+
+            Console.WriteLine("Are Sibling: {0}", tree.AreSibling(4, 9));
+            Console.WriteLine("Are Sibling: {0}", tree.AreSibling(1, 10));
+
+            var ancestors = tree.GetAncestors(4);
+            foreach (var ancestor in ancestors)
+                Console.WriteLine("Ancestor of 4: {0}", ancestor);
+
+
+            var ancestors1 = tree.GetAncestors(1);
+            foreach (var ancestor in ancestors1)
+                Console.WriteLine("Ancestor of 1: {0}", ancestor);
+
+            var ancestors2 = tree.GetAncestors(10);
+            foreach (var ancestor in ancestors2)
+                Console.WriteLine("Ancestor of 10: {0}", ancestor);
+
+            Console.WriteLine("Is Balanced: {0}", tree.IsBalanced());
+
+
         }
 
     }

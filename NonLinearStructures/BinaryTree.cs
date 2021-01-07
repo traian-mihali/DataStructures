@@ -63,6 +63,22 @@ namespace DataStructures.NonLinearStructures
             return false;
         }
 
+        public bool Contains(int value)
+        {
+            return Contains(_root, value);
+        }
+
+        private bool Contains(Node root, int value)
+        {
+            if (root == null)
+                return false;
+
+            if (root.Value == value)
+                return true;
+
+            return Contains(root.LeftChild, value) || Contains(root.RightChild, value);
+        }
+
         public void TraverseLevelOrder()
         {
             for (var i = 0; i <= Height(); i++)
@@ -157,11 +173,17 @@ namespace DataStructures.NonLinearStructures
 
         public int Min()
         {
+            if (_root == null)
+                throw new InvalidOperationException();
+
             return Min(_root);
         }
 
         private int Min(Node root)
         {
+            if (root == null)
+                return int.MaxValue;
+
             if (IsLeaf(root))
                 return root.Value;
 
@@ -269,6 +291,110 @@ namespace DataStructures.NonLinearStructures
 
             GetNodesAtDistance(root.LeftChild, distance - 1, nodes);
             GetNodesAtDistance(root.RightChild, distance - 1, nodes);
+        }
+
+        public int Size()
+        {
+            return Size(_root);
+        }
+
+        private int Size(Node root)
+        {
+            if (root == null)
+                return 0;
+
+            if (IsLeaf(root))
+                return 1;
+
+            return 1 + Size(root.LeftChild) + Size(root.RightChild);
+        }
+
+        public int CountLeaves()
+        {
+            return CountLeaves(_root);
+        }
+
+        private int CountLeaves(Node root)
+        {
+            if (root == null)
+                return 0;
+
+            if (IsLeaf(root))
+                return 1;
+
+            return CountLeaves(root.LeftChild) + CountLeaves(root.RightChild);
+        }
+
+        public int Max()
+        {
+            if (_root == null)
+                throw new InvalidOperationException();
+
+            return Max(_root);
+        }
+
+        private int Max(Node root)
+        {
+            if (root.RightChild == null)
+                return root.Value;
+
+            return Max(root.RightChild);
+        }
+
+        public bool AreSibling(int first, int second)
+        {
+            return AreSibling(_root, first, second);
+        }
+
+        private bool AreSibling(Node root, int first, int second)
+        {
+            if (root == null)
+                return false;
+
+            var areSibling = false;
+            if (root.LeftChild != null && root.RightChild != null)
+                areSibling = (root.LeftChild.Value == first && root.RightChild.Value == second) || (root.RightChild.Value == first && root.LeftChild.Value == second);
+
+            return areSibling || AreSibling(root.LeftChild, first, second) || AreSibling(root.RightChild, first, second);
+        }
+
+        public IList<int> GetAncestors(int value)
+        {
+            var list = new List<int>();
+            GetAncestors(_root, value, list);
+            return list;
+        }
+
+        private bool GetAncestors(Node root, int value, IList<int> list)
+        {
+            if (root == null)
+                return false;
+
+            if (root.Value == value)
+                return true;
+
+            if (GetAncestors(root.LeftChild, value, list) || GetAncestors(root.RightChild, value, list))
+            {
+                list.Add(root.Value);
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool IsBalanced()
+        {
+            return IsBalanced(_root);
+        }
+
+        private bool IsBalanced(Node root)
+        {
+            if (root == null)
+                return true;
+
+            var balanceFactor = Height(root.LeftChild) - Height(root.RightChild);
+
+            return Math.Abs(balanceFactor) <= 1 && IsBalanced(root.LeftChild) && IsBalanced(root.RightChild);
         }
 
         private bool IsLeaf(Node root)
