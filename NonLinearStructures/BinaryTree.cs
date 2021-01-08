@@ -394,7 +394,8 @@ namespace DataStructures.NonLinearStructures
 
             var balanceFactor = Height(root.LeftChild) - Height(root.RightChild);
 
-            return Math.Abs(balanceFactor) <= 1 && IsBalanced(root.LeftChild) && IsBalanced(root.RightChild);
+            //return Math.Abs(balanceFactor) <= 1 && IsBalanced(root.LeftChild) && IsBalanced(root.RightChild);
+            return Math.Abs(balanceFactor) <= 1;
         }
 
         private bool IsLeaf(Node root)
