@@ -17,7 +17,7 @@ namespace DataStructures
 
         static void Main(string[] args)
         {
-            TestBinaryTree();
+            //TestBinaryTree();
 
             Console.ReadLine();
         }

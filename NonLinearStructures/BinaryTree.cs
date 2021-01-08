@@ -79,22 +79,29 @@ namespace DataStructures.NonLinearStructures
             return Contains(root.LeftChild, value) || Contains(root.RightChild, value);
         }
 
-        public void TraverseLevelOrder()
+        public IEnumerable<int> TraverseLevelOrder()
         {
+            var values = new List<int>();
+
             for (var i = 0; i <= Height(); i++)
                 foreach (var value in GetNodesAtDistance(i))
-                    Console.WriteLine(value);
+                    values.Add(value);
+
+            return values;
         }
 
-        public void TraverseBreadthFirst()
+        public IEnumerable<int> TraverseBreadthFirst()
         {
-            TraverseBreadthFirst(_root);
+            return TraverseBreadthFirst(_root);
         }
 
-        private void TraverseBreadthFirst(Node root)
+        private IEnumerable<int> TraverseBreadthFirst(Node root)
         {
+            var values = new List<int>();
             var nodes = new Queue<Node>();
-            nodes.Enqueue(root);
+
+            if (root != null)
+                nodes.Enqueue(root);
 
             while (nodes.Count > 0)
             {
@@ -106,53 +113,67 @@ namespace DataStructures.NonLinearStructures
                 if (current.RightChild != null)
                     nodes.Enqueue(current.RightChild);
 
-                Console.WriteLine(current.Value);
+                values.Add(current.Value);
             }
+
+            return values;
         }
 
-        public void TraversePreOrder()
+        public IEnumerable<int> TraversePreOrder()
         {
-            TraversePreOrder(_root);
+            var list = new List<int>();
+
+            TraversePreOrder(_root, list);
+
+            return list;
         }
 
-        public void TraverseInOrder()
-        {
-            TraverseInOrder(_root);
-        }
-
-        public void TraversePostOrder()
-        {
-            TraversePostOrder(_root);
-        }
-
-        private void TraversePreOrder(Node root)
+        private void TraversePreOrder(Node root, IList<int> list)
         {
             if (root == null)
                 return;
 
-            Console.WriteLine(root.Value);
-            TraversePreOrder(root.LeftChild);
-            TraversePreOrder(root.RightChild);
+            list.Add(root.Value);
+            TraversePreOrder(root.LeftChild, list);
+            TraversePreOrder(root.RightChild, list);
         }
 
-        private void TraverseInOrder(Node root)
+        public IEnumerable<int> TraverseInOrder()
+        {
+            IList<int> list = new List<int>();
+
+            TraverseInOrder(_root, list);
+
+            return list;
+        }
+
+        private void TraverseInOrder(Node root, IList<int> list)
         {
             if (root == null)
                 return;
 
-            TraverseInOrder(root.LeftChild);
-            Console.WriteLine(root.Value);
-            TraverseInOrder(root.RightChild);
+            TraverseInOrder(root.LeftChild, list);
+            list.Add(root.Value);
+            TraverseInOrder(root.RightChild, list);
         }
 
-        private void TraversePostOrder(Node root)
+        public IEnumerable<int> TraversePostOrder()
+        {
+            IList<int> list = new List<int>();
+
+            TraversePostOrder(_root, list);
+
+            return list;
+        }
+
+        private void TraversePostOrder(Node root, IList<int> list)
         {
             if (root == null)
                 return;
 
-            TraversePostOrder(root.LeftChild);
-            TraversePostOrder(root.RightChild);
-            Console.WriteLine(root.Value);
+            TraversePostOrder(root.LeftChild, list);
+            TraversePostOrder(root.RightChild, list);
+            list.Add(root.Value);
         }
 
         public int Height()
