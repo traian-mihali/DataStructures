@@ -477,5 +477,125 @@ namespace DataStructures.UnitTests
 
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        public void TraverseLevelOrder_WhenCalledOnEmptyTree_ReturnsEmptyList()
+        {
+            var result = _tree.TraverseLevelOrder();
+
+            Assert.That(result, Is.Empty);
+        }
+
+        [Test]
+        [TestCase(3, 1, 4, 2, 5, new int[] { 3, 1, 4, 2, 5 })]
+        [TestCase(4, 2, 3, 5, 1, new int[] { 4, 2, 5, 1, 3 })]
+        public void TraverseLevelOrder_WhenCalled_ReturnsList(int value1, int value2, int value3, int value4, int value5, int[] expectedResult)
+        {
+            _tree.Insert(value1);
+            _tree.Insert(value2);
+            _tree.Insert(value3);
+            _tree.Insert(value4);
+            _tree.Insert(value5);
+
+            var result = _tree.TraverseLevelOrder();
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        public void TraverseBreadthFirst_WhenCalledOnEmptyTree_ReturnsEmptyList()
+        {
+            var result = _tree.TraverseBreadthFirst();
+
+            Assert.That(result, Is.Empty);
+        }
+
+        [Test]
+        [TestCase(3, 1, 4, 2, 5, new int[] { 3, 1, 4, 2, 5 })]
+        [TestCase(4, 2, 3, 5, 1, new int[] { 4, 2, 5, 1, 3 })]
+        public void TraverseBreadthFirst_WhenCalled_ReturnsList(int value1, int value2, int value3, int value4, int value5, int[] expectedResult)
+        {
+            _tree.Insert(value1);
+            _tree.Insert(value2);
+            _tree.Insert(value3);
+            _tree.Insert(value4);
+            _tree.Insert(value5);
+
+            var result = _tree.TraverseBreadthFirst();
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        public void TraversePreOrder_WhenCalledOnEmptyTree_ReturnsEmptyList()
+        {
+            var result = _tree.TraversePreOrder();
+
+            Assert.That(result, Is.Empty);
+        }
+
+        [Test]
+        [TestCase(3, 1, 4, 2, 5, new int[] { 3, 1, 2, 4, 5 })]
+        [TestCase(4, 2, 3, 5, 1, new int[] { 4, 2, 1, 3, 5 })]
+        public void TraversePreOrder_WhenCalled_ReturnsList(int value1, int value2, int value3, int value4, int value5, int[] expectedResult)
+        {
+            _tree.Insert(value1);
+            _tree.Insert(value2);
+            _tree.Insert(value3);
+            _tree.Insert(value4);
+            _tree.Insert(value5);
+
+            var result = _tree.TraversePreOrder();
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        public void TraverseInOrder_WhenCalledOnEmptyTree_ReturnsEmptyList()
+        {
+            var result = _tree.TraverseInOrder();
+
+            Assert.That(result, Is.Empty);
+        }
+
+        [Test]
+        [TestCase(3, 1, 4, 2, 5, new int[] { 1, 2, 3, 4, 5 })]
+        [TestCase(4, 2, 3, 5, 1, new int[] { 1, 2, 3, 4, 5 })]
+        public void TraverseInOrder_WhenCalled_ReturnsList(int value1, int value2, int value3, int value4, int value5, int[] expectedResult)
+        {
+            _tree.Insert(value1);
+            _tree.Insert(value2);
+            _tree.Insert(value3);
+            _tree.Insert(value4);
+            _tree.Insert(value5);
+
+            var result = _tree.TraverseInOrder();
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        public void TraversePostOrder_WhenCalledOnEmptyTree_ReturnsEmptyList()
+        {
+            var result = _tree.TraversePostOrder();
+
+            Assert.That(result, Is.Empty);
+        }
+
+        [Test]
+        [TestCase(3, 1, 4, 2, 5, new int[] { 2, 1, 5, 4, 3 })]
+        [TestCase(4, 2, 3, 5, 1, new int[] { 1, 3, 2, 5, 4 })]
+        public void TraversePostOrder_WhenCalled_ReturnsList(int value1, int value2, int value3, int value4, int value5, int[] expectedResult)
+        {
+            _tree.Insert(value1);
+            _tree.Insert(value2);
+            _tree.Insert(value3);
+            _tree.Insert(value4);
+            _tree.Insert(value5);
+
+            var result = _tree.TraversePostOrder();
+
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }
