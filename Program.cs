@@ -431,8 +431,8 @@ namespace DataStructures
             Console.WriteLine("Tree Height: {0}", tree.Height());
             Console.WriteLine("Tree Min Value: {0}", tree.Min());
 
-            Console.WriteLine("Binary Search Tree Min Value: {0}", tree.MinFromBinarySearchTree());
-            Console.WriteLine("Binary Search Tree Max Value: {0}", tree.MaxFromBinarySearchTree());
+            Console.WriteLine("Binary Search Tree Min Value: {0}", tree.MinFromBST());
+            Console.WriteLine("Binary Search Tree Max Value: {0}", tree.MaxFromBST());
 
             Console.WriteLine("Are Equals: {0}", tree.Equals(tree2));
 

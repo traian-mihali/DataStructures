@@ -171,6 +171,22 @@ namespace DataStructures.NonLinearStructures
             return 1 + Math.Max(Height(root.LeftChild), Height(root.RightChild));
         }
 
+        public int Size()
+        {
+            return Size(_root);
+        }
+
+        private int Size(Node root)
+        {
+            if (root == null)
+                return 0;
+
+            if (IsLeaf(root))
+                return 1;
+
+            return 1 + Size(root.LeftChild) + Size(root.RightChild);
+        }
+
         public int Min()
         {
             if (_root == null)
@@ -193,12 +209,12 @@ namespace DataStructures.NonLinearStructures
             return Math.Min(Math.Min(left, right), root.Value);
         }
 
-        public int MinFromBinarySearchTree()
+        public int MinFromBST()
         {
-            return MinFromBinarySearchTree(_root);
+            return MinFromBST(_root);
         }
 
-        private int MinFromBinarySearchTree(Node root)
+        private int MinFromBST(Node root)
         {
             if (root == null)
                 throw new InvalidOperationException();
@@ -210,12 +226,28 @@ namespace DataStructures.NonLinearStructures
             return current.Value;
         }
 
-        public int MaxFromBinarySearchTree()
+        public int Max()
         {
-            return MaxFromBinarySearchTree(_root);
+            if (_root == null)
+                throw new InvalidOperationException();
+
+            return Max(_root);
         }
 
-        private int MaxFromBinarySearchTree(Node root)
+        private int Max(Node root)
+        {
+            if (root.RightChild == null)
+                return root.Value;
+
+            return Max(root.RightChild);
+        }
+
+        public int MaxFromBST()
+        {
+            return MaxFromBST(_root);
+        }
+
+        private int MaxFromBST(Node root)
         {
             if (root == null)
                 throw new InvalidOperationException();
@@ -293,22 +325,6 @@ namespace DataStructures.NonLinearStructures
             GetNodesAtDistance(root.RightChild, distance - 1, nodes);
         }
 
-        public int Size()
-        {
-            return Size(_root);
-        }
-
-        private int Size(Node root)
-        {
-            if (root == null)
-                return 0;
-
-            if (IsLeaf(root))
-                return 1;
-
-            return 1 + Size(root.LeftChild) + Size(root.RightChild);
-        }
-
         public int CountLeaves()
         {
             return CountLeaves(_root);
@@ -323,22 +339,6 @@ namespace DataStructures.NonLinearStructures
                 return 1;
 
             return CountLeaves(root.LeftChild) + CountLeaves(root.RightChild);
-        }
-
-        public int Max()
-        {
-            if (_root == null)
-                throw new InvalidOperationException();
-
-            return Max(_root);
-        }
-
-        private int Max(Node root)
-        {
-            if (root.RightChild == null)
-                return root.Value;
-
-            return Max(root.RightChild);
         }
 
         public bool AreSibling(int first, int second)
