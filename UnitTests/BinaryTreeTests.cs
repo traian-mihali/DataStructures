@@ -15,6 +15,14 @@ namespace DataStructures.UnitTests
         }
 
         [Test]
+        public void Insert_WhenCalled_AddsValueToTree()
+        {
+            _tree.Insert(1);
+
+            Assert.That(_tree.Size(), Is.EqualTo(1));
+        }
+
+        [Test]
         public void Find_WhenCalledOnEmptyTree_ReturnsFalse()
         {
             var result = _tree.Find(1);
